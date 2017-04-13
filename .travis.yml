@@ -24,3 +24,4 @@ deploy:
   app: demo-fbwish
   on:
     repo: drzef/fbwish
+    
