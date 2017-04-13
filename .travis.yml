@@ -1,0 +1,15 @@
+language: python
+services:
+- postgresql
+python:
+  - "3.5"
+env:
+  - DJANGO_SETTINGS_MODULE=config.settings.test
+  - DEBUG=False
+  - DATABASE_URL=postgres://postgres@localhost/test_db
+before_script:
+  - psql -c 'create database test_db;' -U postgres
+# command to install dependencies
+install: "pip install -r requirements.txt"
+# command to run tests
+script: sh -c 'cd src && python manage.py test'

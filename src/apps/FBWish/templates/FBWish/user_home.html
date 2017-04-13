@@ -1,0 +1,36 @@
+{% extends "FbWish/layout.html" %}
+
+{% block content %}
+
+<div class="row">
+    <div class="col-md-8">
+      <h2>I tuoi Desideri </h2>
+        <table class="table table-hover table-striped">
+            <thead>
+              <tr>
+                <td>Nome</td>
+                <td>Costo</td>
+                <td>Data di Aggiunta</td>
+              </tr>
+            </thead>
+            <tbody>
+            {% for present in own_present %}
+              <tr>
+                  <td><a href="{% url 'present-detail' present.id%}">{{ present.name }}</a></td>
+                  <td>{{ present.cost }}</td>
+                  <td>{{ present.date_inserted|date }}</td>
+                </tr>
+
+            {% endfor %}
+            </tbody>
+          </table>
+        <p><a class="btn btn-default" href="{% url 'present-add' %}">Add a new wish</a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>{{ user.username }}</h2>
+        <p><img src="http://graph.facebook.com/{{ uid }}/picture?type=large" class="img-responsive img-circle" alt="Responsive image"></p>
+        <p><a class="btn btn-default" href="https://pypi.python.org/pypi">Learn more &raquo;</a></p>
+    </div>
+</div>
+
+{% endblock %}

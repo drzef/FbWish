@@ -1,0 +1,35 @@
+{% extends "FbWish/layout.html" %}
+{% load widget_tweaks %}
+
+{% block content %}
+
+<div class="page-header">
+<h1>{{ title }}</h1>
+</div>
+<div class="row">
+    <div class="col-md-8 col-md-offset-2">
+            {% if form.errors %}
+                <p class="validation-summary-errors">{{form.errors}}</p>
+            {% endif %}
+            <form action="." method="post" >
+                {% csrf_token %}
+                {% for field in form %}
+                    <div class="form-group">
+                        {{ field.errors }}
+                        {{ field.label_tag }} {{ field|add_class:"form-control" }}
+                    </div>
+                {% endfor %}
+                <input type="submit" class="btn btn-primary"value="Save" />
+            </form>
+    </div>
+</div>
+
+{% endblock %}
+
+
+{% block scripts %}
+
+    {% load staticfiles %}
+<script src="{% static 'FbWish/scripts/jquery.validate.min.js' %}"></script>
+
+{% endblock %}

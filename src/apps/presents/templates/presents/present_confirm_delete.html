@@ -1,0 +1,15 @@
+{% extends "FbWish/layout.html" %}
+
+{% block content %}
+<div class="page-header">
+<h1>Conferma Cancellazione</h1>
+</div>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3 text-center">
+    <form action="." method="post">{% csrf_token %}
+        <strong>Sei sicuro di voler cancellare "{{ object }}"?</strong><br/>
+        <input type="submit" class="btn btn-danger btn-lg" value="SI, Cancella" />
+    </form>
+  </div>
+</div>
+{% endblock %}
