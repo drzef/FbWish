@@ -27,7 +27,7 @@ def home(request):
     assert isinstance(request, HttpRequest)
     return render(
         request,
-        'FbWish/contact.html',
+        'FBWish/contact.html',
         {
             'title':'Contact',
             'message':'Your contact page.',
@@ -40,7 +40,7 @@ def home(request):
     assert isinstance(request, HttpRequest)
     return render(
         request,
-        'FbWish/about.html',
+        'FBWish/about.html',
         {
             'title':'About',
             'message':'Your application description page.',
