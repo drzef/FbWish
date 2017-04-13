@@ -16,4 +16,4 @@ before_script:
 # command to install dependencies
 install: "pip install -r requirements.txt"
 # command to run tests
-script: sh -c 'cd src && python manage.py test'
+script: sh -c 'cd src && python manage.py collectstatic && python manage.py test'
