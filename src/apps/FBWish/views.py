@@ -5,9 +5,9 @@ from datetime import datetime
 
 from django.shortcuts import render
 from django.http import HttpRequest
-from django.template import RequestContext
 
 from apps.presents.models import Present
+
 
 
 def home(request):
@@ -58,7 +58,7 @@ def user_home(request):
             'title':'User Profile',
             'year':datetime.now().year,
             'uid': request.user.social_auth.get(provider='facebook').uid,
-            'own_present': Present.objects.filter(owner=request.user,buyed=False).order_by('-date_inserted'),
+            'own_present': Present.objects.filter(owner=request.user, buyed=False).order_by('-date_inserted'),
 
         }
     )
