@@ -13,7 +13,8 @@ env:
     - secure: "R+p9/DsA9Wh5fft5y2RoI00722l1PukCnZY/7VGPRIoKf6L6+1Gqqi6hzc3dfIiRnyritKASZHFuctLoV9wMOTekHXDquCYbcB/A0pQ8z5AE+fLsLQNjfmYq2tnHi+FBrlWv3Vht0RUQVqZ4mSVjGLvjNYmnZasrQBQ2XJjkzOzfIAQmndI3fm6D5BFVWuBRkzTeaLvzQPoqNQGxxSYw9usBC+Fll8PAKgQS7ybFxtjS6dKXEbo/UjxrJKvfwn2z8JL3VH0IlpR63zstr2XpFUdoMenZyZc2jO2O72/UvejKVVo6iXseIhRTUMQaewTZ8Bi8KqE71ETwZ9w9f1JFeBFr/VI+SSyrIhlMiW8ed8cZ6bCPu1ZBs3GouK5re003OvWq3Bre1on3lyZ3U9Rg6jJvtNxUGD5iuNqhWEN3zJs8T2D67bZcqZy7Qqd0Sc+K7zMv+862fAcnt4tkpOwuQQgSUKY6McQFVMxj2KsGqhzRgxt50B1mEoTLcMK2EDnaGDBnF7y5dkm2o2RrUI6yXz1MFANsPMeZV6ns3BPmCAMFwA5di+RtSQhoJmG2ohKMfrX8EM9t4QU+93iiXDyTbZjvjlrTi73PSPLv20UOV+qslfEEK3mHmlYbw5pjCBI7AoBF7QQ+gwa3OfIJp3HVZrC1ydSxZ8pVvjKMlj9E8gw="
 before_script:
   - psql -c 'create database test_db;' -U postgres
+  - sh -c 'cd src && python manage.py collectstatic'
 # command to install dependencies
 install: "pip install -r requirements.txt"
 # command to run tests
-script: sh -c 'cd src && python manage.py collectstatic && python manage.py test'
+script: sh -c 'cd src && python manage.py test'
