@@ -7,6 +7,7 @@ class PresentViewTestCase(TestCase):
         return
 
     def test_createView(self):
+        """ Test create view. """
         client = Client(enforce_csrf_checks=True)
         response = client.get(reverse('present-add'))
         self.assertEqual(response.status_code, 302)
