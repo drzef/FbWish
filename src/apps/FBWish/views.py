@@ -15,7 +15,7 @@ def home(request):
     assert isinstance(request, HttpRequest)
     return render(
         request,
-        'FbWish/index.html',
+        'FBWish/index.html',
         {
             'title':'Home Page',
             'year':datetime.now().year,
@@ -53,7 +53,7 @@ def user_home(request):
     assert isinstance(request, HttpRequest)
     return render(
         request,
-        'FbWish/user_home.html',
+        'FBWish/user_home.html',
         {
             'title':'User Profile',
             'year':datetime.now().year,
