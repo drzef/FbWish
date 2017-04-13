@@ -1,0 +1,1 @@
+web: gunicorn fbwish.wsgi --log-file -
