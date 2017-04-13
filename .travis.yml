@@ -19,6 +19,7 @@ install: pip install -r requirements.txt
 script: python manage.py test
 deploy:
   provider: heroku
+  buildpack: python
   api_key:
     secure: BFK7Ne8ecKJlxsw40BLR8JUGyVE7lwMd5ZhUAu1LxzEGyUT15KabQV6mn4AXCv+CIIVdK74RjUtJfAPDrxOMXHwNgKyHU59MPV/BGYamKKQVho+HduWNPNJSPS4O42kb1kRjy49p4xUjxnNbknb+2x6F4cKVWducHRD1yaeziI9zibp4y/MQ9pGqbG6now5WUqF8MHhWlI0BiJvaW6mGSrCctnUQwnl7Wf5BGguOa/P0wmM7W/L5HmCpXdDAHOcgIjBanE/BBHEQ2I+GNRqjnIGbCLUEm7juWOeVbcoX+dJaWmkzF/4PmVZ9MmfYU1iBQGibENhdJd+TzX/Uy6sNLSWYqLVVDb0s6nTYwKX4W7TcNe37vSlmtJwF4FRnahV+FNpWfJzyQ4yX68fJzV15U6GNFRH3yxBH6GJh3YJRDATtEBP6zvJobKjqr/WG051GB1hQLhX228vN5U/NON8gGev3jdgue9w79UPX4tTldQ6vlCR9nUX0j+R9AVg//uScdDT/EVFIT7zwGY5pZnZnVM21XtzmimJ7+8DXpcSnPIBz4MYSiEAk/4gToeNR4PQV7Dm+OcHD0gI91Xcd+qzqo0Hrn0ujytfSZ8x5sTWZlLxdTOJ7Wz/leoVqG7r8G6l9S3ZJLn2Awamnk1IF9jWo9m0cfSRI0eMxhEWO8Y0XgTo=
   app: demo-fbwish
